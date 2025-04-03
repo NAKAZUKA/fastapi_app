@@ -8,10 +8,10 @@ run:
 	$(UV_RUN) uvicorn $(APP_PATH) --host $(HOST) --port $(PORT) --reload
 
 format:
-	uv run black .
+	$(UV_RUN) black .
 
 lint:
-	uv run ruff check .
+	$(UV_RUN) ruff check .
 
 gitsync:
-	git add . && git commit -m "$(COMMIT)" && git push
+	$(UV_RUN) git add . && git commit -m "$(COMMIT)" && git push
